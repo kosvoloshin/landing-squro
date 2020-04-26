@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "fontello";
+    src: url("../fonts/fontello.eot?98972769");
+    src: url("../fonts/fontello.eot?98972769#iefix") format("embedded-opentype"),
+        url("../fonts/fontello.woff2?98972769") format("woff2"), url("../fonts/fontello.woff?98972769") format("woff"),
+        url("../fonts/fontello.ttf?98972769") format("truetype"),
+        url("../fonts/fontello.svg?98972769#fontello") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angle-down:before {
+    content: "\e800";
+} /* '' */
+.icon-service-one:before {
+    content: "\e801";
+} /* '' */
+.icon-service-four:before {
+    content: "\e803";
+} /* '' */
+.icon-service-three:before {
+    content: "\e804";
+} /* '' */
+.icon-service-two:before {
+    content: "\e805";
+} /* '' */
+.icon-next:before {
+    content: "\e806";
+} /* '' */
+.icon-menu:before {
+    content: "\e808";
+} /* '' */
+.icon-info:before {
+    content: "\e809";
+} /* '' */
+.icon-attach:before {
+    content: "\e80a";
+} /* '' */
+.icon-instagram:before {
+    content: "\e80c";
+} /* '' */
+.icon-telegram:before {
+    content: "\e80d";
+} /* '' */
+.icon-facebook:before {
+    content: "\e80e";
+} /* '' */
+.icon-twitter:before {
+    content: "\e80f";
+} /* '' */

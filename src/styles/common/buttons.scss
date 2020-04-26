@@ -1,0 +1,51 @@
+.button {
+    font-family: $font;
+    font-size: 1.6rem;
+    line-height: normal;
+    letter-spacing: -0.025em;
+    transition: 0.3s;
+    display: inline-block;
+
+    &_simple {
+        color: $w;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    &_bordered {
+        border: 0.1rem solid $yellow;
+        color: $yellow;
+        padding: em(7/16) em(20/16);
+
+        &:hover {
+            background-color: $yellow;
+            color: $b;
+        }
+    }
+
+    &_default {
+        font-size: 1.8rem;
+        background-color: $yellow;
+        color: $b;
+        padding: em(14/18) em(65/18);
+
+        &:hover {
+            background-color: $yellow_light;
+        }
+
+        @include --md {
+            font-size: 1.6rem;
+        }
+
+        @include --sm {
+            font-size: 1.4rem;
+        }
+    }
+
+    &_submit {
+        width: 100%;
+        text-align: center;
+    }
+}

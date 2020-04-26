@@ -1,24 +1,43 @@
 header.header
     .container
         .header__wrap
-            .header__logo
-                a(href="/")
-                    img(src="./assets/images/logo.png" alt="logo")
-            .header__menu.menu
-                ul.menu__list
-                    li.menu__item
-                        a.menu__link(href="#about" data-anchor="true") ABOUT US
-                    li.menu__item
-                        a.menu__link(href="#c2b" data-anchor="true") C2B ACCOUNTS
-                    li.menu__item
-                        a.menu__link(href="#b2b" data-anchor="true") B2B ACCOUNTS
-                    li.menu__item
-                        a.menu__link(href="#sale" data-anchor="true") ACCOUNTS FOR SALE
-                    li.menu__item
-                        a.menu__link(href="/accounts.html") AVAILABLE ACCOUNTS
-                    li.menu__item
-                        a.menu__link(href="#contacts" data-anchor="true") CONTACTS
-                button.logout(type="button")
-                    svg.icon: use(xlink:href="assets/images/icons/sprite.svg#logout")
+            .logo
+                a(href="/").logo__link Logo
+            .header__content
+                .header__container
+                    .header__menu.menu
+                        ul.menu__list
+                            each item, index in ["Home", "About us", "Our News", "Blog", "Contacts", "Faq"]
+                                li.menu__item
+                                    a.menu__link(href="#")=item
+                                    .menu__submenu
+                                        .menu__submenu-column
+                                            .menu__submenu-title Submenu 01
+                                            ul.menu__submenu-list
+                                                li.menu__submenu-item
+                                                    a(href="#").menu__submenu-link Submenu item
+                                                li.menu__submenu-item
+                                                    a(href="#").menu__submenu-link Submenu item
+                                        .menu__submenu-column
+                                            .menu__submenu-title Submenu 02
+                                            ul.menu__submenu-list
+                                                li.menu__submenu-item
+                                                    a(href="#").menu__submenu-link Submenu item
+                                                li.menu__submenu-item
+                                                    a(href="#").menu__submenu-link Submenu item
+                                                li.menu__submenu-item
+                                                    a(href="#").menu__submenu-link Submenu item
+                    .header__controls
+                        button.button.button_simple(type="button") Sign in
+                        button.button.button_bordered(type="button") Registration
+                .lang
+                    button(type="button").lang__control English
+                    ul.lang__list
+                        li.lang__item
+                            a.lang__link(href="#") English
+                        li.lang__item
+                            a.lang__link(href="#") Spanish
+                        li.lang__item
+                            a.lang__link(href="#") German
             button(type="button").hamburger
                 .hamburger__menu

@@ -1,533 +1,750 @@
-.start {
+.slider {
     position: relative;
-}
+    background-color: $b;
 
-.start__row--bg {
-    background-image: linear-gradient(to bottom, #002c3a, #00546e);
-    padding: rem(208px) 0 rem(175px) 0;
+    &__list {
+        height: 60rem;
+        position: relative;
 
-    @include --lg {
-        padding: 178px 0 105px 0;
+        @include --lg {
+            height: 50rem;
+        }
+
+        @include --md {
+            height: 40rem;
+        }
+
+        @include --xs {
+            height: 30rem;
+        }
     }
 
-    @include --md {
-        padding: 140px 0 80px 0;
+    &__item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.6s;
+
+        &.active {
+            z-index: 2;
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
-    @include --sm {
-        padding: 120px 0 60px 0;
-    }
+    &__title {
+        font-size: 6rem;
+        line-height: normal;
+        color: $w;
+        margin-bottom: em(42/60);
 
-    @include --xs {
-        padding: 100px 0 60px 0;
-    }
-}
+        @include --lg {
+            font-size: 5rem;
+        }
 
-.start__title {
-    font-family: $fm;
-    font-size: rem(48px);
-    font-weight: bold;
-    font-stretch: condensed;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: $text_link2;
+        @include --md {
+            font-size: 4.5rem;
+        }
 
-    @include --lg {
-        font-size: 42px;
-    }
+        @include --sm {
+            font-size: 3.5rem;
 
-    @include --md {
-        font-size: 36px;
-    }
+            & br {
+                display: none;
+            }
+        }
 
-    @include --sm {
-        font-size: 30px;
-    }
-
-    @include --xs {
-        font-size: 20px;
-        text-align: center;
-
-        & br {
-            display: none;
+        @include --xs {
+            font-size: 2.8rem;
         }
     }
 }
 
-.start__subtitle {
-    font-family: $fsb;
-    font-size: rem(22px);
-    font-weight: 600;
-    font-style: normal;
-    line-height: em(32/22);
-    letter-spacing: normal;
-    color: $text_link2;
-    margin-top: em(28/22);
-
-    @include --lg {
-        font-size: 20px;
-    }
-
-    @include --md {
-        font-size: 18px;
-    }
-
-    @include --sm {
-        font-size: 16px;
-    }
-
-    @include --xs {
-        text-align: center;
-    }
-}
-
-.slider {
-    background-color: #fff;
-    padding: rem(33px) 0 rem(101px) 0;
-
-    @include --lg {
-        padding: rem(33px) 0 rem(70px) 0;
-    }
-
-    @include --md {
-        padding: 33px 0 55px 0;
-    }
-
-    @include --xs {
-        padding: 33px 0 45px 0;
-    }
-}
-
-.slider__slogan {
-    font-family: $fsb;
-    font-size: rem(22px);
-    font-weight: 600;
-    font-style: normal;
-    line-height: em(32/22);
-    letter-spacing: normal;
-    color: $text;
-    margin-bottom: rem(33px);
-
-    @include --lg {
-        font-size: 20px;
-    }
-
-    @include --md {
-        font-size: 18px;
-        margin-bottom: 25px;
-    }
-
-    @include --sm {
-        margin-bottom: 20px;
-    }
-}
-
-.slider__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.dots {
+    position: absolute;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: auto !important;
-}
-
-.slider__item > img {
-    margin-left: rem(35px);
-    margin-right: rem(35px);
-    transform: scale(0.85);
+    left: 50%;
+    bottom: 4rem;
+    z-index: 10;
+    width: 96rem;
+    transform: translateX(-50%);
 
     @include --md {
-        transform: scale(0.65);
-        margin: 0;
+        width: 100%;
+        padding-left: 3rem;
     }
 
     @include --xs {
-        margin-left: 20px;
-        margin-right: 20px;
-        transform: scale(0.75);
+        bottom: 3rem;
+    }
+
+    &__btn {
+        height: 1.2rem;
+        width: 1.2rem;
+        border-radius: 50%;
+        background-color: $w;
+        margin-right: 1.8rem;
+        transition: 0.3s;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $yellow_light;
+        }
+
+        &.active {
+            background-color: $yellow;
+        }
     }
 }
 
-.start__abs-img {
-    position: absolute;
-    bottom: -2px;
-    right: rem(61px);
-    pointer-events: none;
+.partners {
+    background-color: $yellow;
 
-    & > img {
-        max-width: 100%;
-        height: auto;
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.02rem 0;
+
+        @include --sm {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
     }
 
-    @include --lg {
-        width: 50%;
-        right: 30px;
-    }
+    &__item {
+        @include --md {
+            padding-right: 5rem;
+            &:last-child {
+                padding-right: 0;
+            }
+            & > img {
+                max-width: 100%;
+            }
+        }
 
-    @include --sm {
-        display: none;
+        @include --sm {
+            padding: 1rem;
+        }
     }
 }
 
-.services__line {
-    text-align: center;
+.services {
+    overflow: hidden;
 
-    &:last-child {
-        padding-top: rem(26px);
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -3rem;
+        padding-top: 2.7rem;
 
-        @include --lg {
+        @include --md {
             padding-top: 0;
         }
     }
-}
 
-.services__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
+    &__item {
+        width: 25%;
+        padding-right: 3rem;
+        padding-top: 2.5rem;
+        border-top: 0.1rem solid #525c69;
+        position: relative;
 
-.services__item {
-    width: calc(100% / 3);
-    padding-top: rem(74px);
-    opacity: 0;
-    visibility: hidden;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-duration: 800ms;
-    animation-duration: 800ms;
-    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transform: translateY(0.8em) translateZ(0);
-    transform: translateY(0.8em) translateZ(0);
-
-    @include --md {
-        padding-top: 50px;
-    }
-
-    @include --sm {
-        width: 50%;
-        padding-top: 40px;
-    }
-}
-
-.services__title {
-    font-family: $r;
-    font-size: rem(16px);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: $w;
-    margin-top: em(12/16);
-
-    @include --xs {
-        font-size: 14px;
-    }
-}
-
-.contacts__list {
-    padding-top: rem(60px);
-    opacity: 0;
-    visibility: hidden;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-duration: 800ms;
-    animation-duration: 800ms;
-    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transform: translateY(0.8em) translateZ(0);
-    transform: translateY(0.8em) translateZ(0);
-
-    @include --md {
-        padding-top: 35px;
-    }
-}
-
-.contacts__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: rem(36px);
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-
-    @include --md {
-        margin-bottom: 30px;
-
-        &:last-child {
-            margin-bottom: 0;
+        &:before {
+            content: "";
+            height: 0.3rem;
+            width: 4rem;
+            position: absolute;
+            left: 0;
+            top: -0.1rem;
+            background-color: $yellow_light;
         }
-    }
-
-    @include --sm {
-        margin-bottom: 25px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    @include --xs {
-        padding-left: 25px;
-    }
-}
-
-.contacts__icon {
-    margin-right: rem(24px);
-
-    & .icon {
-        height: rem(30px);
-        width: rem(30px);
-        fill: $w;
 
         @include --md {
-            height: 25px;
-            width: 25px;
+            width: 50%;
+            margin-top: 4rem;
+        }
+
+        @include --xs {
+            width: 100%;
         }
     }
 
-    @include --lg {
-        margin-right: 18px;
+    &__count {
+        font-size: 3.5rem;
+        line-height: normal;
+        color: $yellow_light;
+
+        @include --sm {
+            font-size: 2.8rem;
+        }
+    }
+
+    &__desc {
+        font-size: 2.2rem;
+        line-height: normal;
+        font-weight: 900;
+        color: $w;
+        margin-bottom: em(28/22);
+    }
+
+    &__card {
+        background-image: url("../images/service-bg.png");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-radius: 0.4rem;
+        padding: 4rem 3rem;
+        cursor: pointer;
+
+        &:hover .services__icon {
+            color: $w;
+        }
+    }
+
+    &__icon {
+        color: $yellow_light;
+        line-height: 1;
+        font-size: 6.8rem;
+        transition: 0.6s;
+        & > span {
+            line-height: 1;
+            display: inline-block;
+        }
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        line-height: normal;
+        color: $w;
+        font-weight: 900;
+        margin: em(15/22) 0;
+
+        @include --md {
+            font-size: 2rem;
+        }
+
+        @include --sm {
+            font-size: 1.9rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: normal;
+        color: $w;
     }
 }
 
-.contacts__data {
-    font-family: $r;
-    font-size: rem(20px);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: $w;
+.news {
+    position: relative;
 
-    & a {
-        display: block;
-        color: $w;
+    & .news__bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:nth-child(1) {
+            left: 0;
+            right: 50%;
+        }
+        &:nth-child(2) {
+            left: 50%;
+            right: 0;
+        }
+
+        @include --sm {
+            &:nth-child(1) {
+                left: 0;
+                right: 0;
+                bottom: 50%;
+            }
+            &:nth-child(2) {
+                left: 0;
+                right: 0;
+                top: 50%;
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @include --sm {
+            flex-direction: column;
+        }
+    }
+
+    &__col {
+        width: 100%;
+        flex-grow: 1;
+        padding: 12rem 0;
+
+        &:last-child {
+            & > * {
+                margin-left: 4rem;
+            }
+        }
+
+        @include --lg {
+            padding: 10rem 0;
+        }
+
+        @include --md {
+            padding: 8rem 0;
+        }
+
+        @include --sm {
+            &:last-child {
+                & > * {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    &__link {
+        font-size: 1.8rem;
+        line-height: normal;
+        color: $yellow;
+        border-bottom: 0.2rem solid currentColor;
+        transition: 0.3s;
+        margin-top: em(24/18);
+        display: inline-block;
+        &:after {
+            content: "\e806";
+            font-family: "Fontello";
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.2rem;
+            margin-left: 0.6rem;
+        }
+
         &:hover {
-            text-decoration: underline;
+            color: $yellow_light;
+        }
+
+        @include --md {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.value {
+    padding: 4rem 0;
+
+    &__title {
+        color: #98989d;
+        font-size: 1.6rem;
+        font-weight: bold;
+        &--required {
+            &:after {
+                content: "*";
+                display: inline-block;
+                vertical-align: top;
+                color: red;
+                margin-left: 0.3rem;
+            }
         }
     }
 
-    @include --lg {
-        font-size: 18px;
+    &__row {
+        display: flex;
 
-        & > br {
-            display: none;
+        @include --sm {
+            flex-direction: column;
         }
     }
 
-    @include --md {
-        font-size: 16px;
+    &__col {
+        flex-grow: 1;
+
+        &:first-child {
+            width: calc(100% - (100% / 3));
+            padding-right: 3rem;
+        }
+
+        &:last-child {
+            width: calc(100% / 3);
+            & .value__box {
+                text-align: right;
+            }
+        }
+
+        @include --sm {
+            &:first-child {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            &:last-child {
+                width: 100%;
+                & .value__box {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    &__box {
+        padding-top: 3rem;
+        flex-grow: 1;
+        width: 100%;
+        display: block;
+        margin-right: 3rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__count {
+        font-size: 3.5rem;
+        line-height: normal;
+        color: #323a45;
+        font-weight: bold;
+        margin-bottom: em(10/35);
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: normal;
+        color: #525c69;
+        margin-top: em(25/16);
+        position: relative;
+        padding-left: 1rem;
+
+        &:before {
+            content: "*";
+            display: inline-block;
+            vertical-align: top;
+            color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__button {
+        margin-top: em(30/18);
+    }
+
+    &__slider {
+        position: relative;
+    }
+}
+
+.range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    background: #ececec;
+    outline: none;
+    transition: opacity 0.3s;
+    display: block;
+    margin: 0;
+    border-radius: 0.3rem;
+
+    &__fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        background-color: $yellow;
+        border-radius: 0.3rem;
+    }
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: $yellow;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+}
+
+.range::-moz-range-thumb {
+    position: relative;
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: $yellow;
+    cursor: pointer;
+}
+
+.step {
+    padding: 4rem 0;
+    background-color: $yellow;
+
+    &__list {
+        display: flex;
+        padding-top: 1.7rem;
+
+        @include --sm {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+        flex-grow: 1;
+        margin-right: 3rem;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include --sm {
+            margin-right: 0;
+            margin-bottom: 2rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 4rem;
+        line-height: normal;
+        font-weight: bold;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 0.7rem;
+            height: 0.7rem;
+            border: 0.1rem solid transparent;
+            border-bottom-color: $b;
+            border-right-color: $b;
+            position: absolute;
+            bottom: -0.3rem;
+            right: 0.1rem;
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            height: 0.1rem;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+        }
+    }
+
+    &__subtitle {
+        font-size: 2.2rem;
+        line-height: normal;
+        font-weight: bold;
+    }
+
+    &__desc {
+        font-size: 1.6rem;
+        line-height: normal;
+        margin-top: em(10/16);
     }
 }
 
 .form {
-    padding-top: rem(30px);
-    position: relative;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-duration: 800ms;
-    animation-duration: 800ms;
-    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transform: translateY(0.8em) translateZ(0);
-    transform: translateY(0.8em) translateZ(0);
-}
+    padding-top: 3rem;
 
-.form__row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: rem(40px);
+    &__row {
+        display: flex;
+        margin-bottom: 2rem;
 
-    &:last-child {
-        margin-bottom: 0;
-    }
-
-    @include --lg {
-        margin-bottom: 30px;
+        @include --sm {
+            flex-direction: column;
+        }
 
         &:last-child {
             margin-bottom: 0;
         }
     }
 
-    @include --md {
-        margin-bottom: 25px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    @include --xs {
-        flex-direction: column;
-    }
-}
-
-.form__block {
-    display: block;
-    flex: 1;
-    margin-right: rem(74px);
-
-    &:last-child {
-        margin-right: 0;
-    }
-
-    @include --lg {
-        margin-right: 60px;
-
+    &__col {
+        display: block;
+        flex-grow: 1;
+        width: 100%;
+        margin-right: 2rem;
         &:last-child {
             margin-right: 0;
         }
-    }
 
-    @include --md {
-        margin-right: 40px;
-
-        &:last-child {
+        @include --sm {
             margin-right: 0;
+            margin-bottom: 2rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
-    @include --xs {
-        margin-right: 0;
-        margin-bottom: 25px;
-
+    &__block {
+        margin-bottom: 2rem;
         &:last-child {
             margin-bottom: 0;
         }
     }
-}
 
-.form__title {
-    font-family: $rb;
-    font-size: rem(14px);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #01436b;
-    text-transform: uppercase;
-    margin-bottom: em(7/14);
-
-    @include --md {
-        font-size: 13px;
-    }
-}
-
-.form__input {
-    font-size: rem(14px);
-    width: 100%;
-    background: none;
-    border: none;
-    padding: rem(5px) 0;
-    line-height: normal;
-    border-bottom: 1px solid #01436b;
-}
-
-.form__textarea {
-    font-size: rem(14px);
-    width: 100%;
-    background: none;
-    border: none;
-    padding: rem(5px) 0;
-    line-height: normal;
-    border-bottom: 1px solid #01436b;
-    resize: none;
-}
-
-.form__submit {
-    font-family: $rb;
-    font-size: rem(14px);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-transform: uppercase;
-    color: $text_dark;
-    background-color: $w;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
-    padding: em(16/14) em(60/14);
-    transition: 0.2s;
-
-    &:hover {
-        background-color: #3f5776;
-        color: $w;
+    &__input-wrap {
+        position: relative;
+        & .form__input {
+            padding-right: 6rem;
+        }
     }
 
-    @include --lg {
-        font-size: 13px;
+    & .select-wrap {
+        position: relative;
+        &:after {
+            content: "\e800";
+            font-family: "Fontello";
+            position: absolute;
+            right: 6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $b;
+        }
     }
 
-    @include --md {
-        font-size: 12px;
+    & .tooltip {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 4.6rem;
+        border-left: 1px solid #ececec;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        & > span {
+            position: absolute;
+            left: calc(100% + 1rem);
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #f9eeb8;
+            border: 0.1rem solid #dfcb98;
+            padding: 1rem;
+            font-size: 1.4rem;
+            line-height: normal;
+            color: #525c69;
+            min-width: 30rem;
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            &:before {
+                content: "";
+                width: 1.6rem;
+                height: 1.6rem;
+                background-color: inherit;
+                border: 0.1rem solid transparent;
+                border-top-color: #dfcb98;
+                border-left-color: #dfcb98;
+                position: absolute;
+                top: 50%;
+                left: -0.8rem;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+
+            @include --xxl {
+                left: auto;
+                right: calc(100% + 1rem);
+                &:before {
+                    left: auto;
+                    right: -0.8rem;
+                    transform: translateY(-50%) rotate(135deg);
+                }
+            }
+
+            @include --xs {
+                min-width: 18rem;
+            }
+        }
+
+        &.active > span {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:after {
+            content: "\e809";
+            font-family: "Fontello";
+            line-height: 1;
+            color: #007ff2;
+        }
     }
 
-    @include --sm {
-        font-size: 11px;
+    &__input,
+    &__textarea {
+        width: 100%;
+        color: #888888;
+        background-color: #f9f9f9;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 1em em(15/16);
+        border: none;
+        font-size: 1.6rem;
+        line-height: normal;
+        font-family: inherit;
+
+        &[type="date"] {
+            max-height: 5rem;
+        }
     }
 
-    @include --xs {
-        width: max-content;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.form__modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: $fsb;
-    font-size: 22px;
-    font-weight: 600;
-    font-stretch: condensed;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #01436b;
-    background-color: $w;
-    box-shadow: 4px 7px 4px 0 rgba(0, 0, 0, 0.5);
-    border: solid 1px #e6e6e6;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    padding: em(45/22) em(71/22);
-    z-index: 1000;
-
-    & > span {
-        display: inline-block;
-        width: max-content;
-        margin-left: em(10/22);
+    &__textarea {
+        resize: none;
+        min-height: 12.08rem;
     }
 
-    @include --lg {
-        font-size: 18px;
-    }
+    &__file {
+        width: 100%;
+        border: 0.2rem dashed #ececec;
+        padding: 1.4rem;
+        font-size: 1.5rem;
+        line-height: normal;
+        color: #888888;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        cursor: pointer;
 
-    @include --xs {
-        font-size: 16px;
-        padding: 25px 30px;
+        &:before {
+            content: "\e80a";
+            font-family: "Fontello";
+            line-height: 1;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        @include --md {
+            padding: 1.1rem;
+        }
     }
 }

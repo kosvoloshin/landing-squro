@@ -1,32 +1,29 @@
 footer.footer
     .container
         .footer__row
-            .footer__col.footer__col--left
-                .footer__logo
-                    a(href="/")
-                        img(src="./assets/images/footer-logo.png" alt="footer-logo")
-                .footer__copy ©2017-2020. All rights reserved
-            .footer__col.footer__col--right
-                .footer__menu-col
-                    ul.footer__menu-list
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#about" data-anchor="true") About us
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#c2b" data-anchor="true") C2B accounts
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#b2b" data-anchor="true") B2B accounts
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#sale" data-anchor="true") Accounts for sale
-                .footer__menu-col
-                    ul.footer__menu-list
-                        li.footer__menu-item
-                            a.footer__menu-link(href="/accounts.html") Available accounts
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#contacts" data-anchor="true") Contact us
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#") Log out
-                .footer__menu-col
-                    ul.footer__menu-list
-                        li.footer__menu-item
-                            a.footer__menu-link(href="#")
-                                img(src="./assets/images/partner-logo.png" alt="partner-logo")
+            .footer__text
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam commodi aliquam minima dolorem ratione quisquam? Velit reiciendis numquam rerum sed at facere, perferendis, tempore facilis dolores non atque voluptates quae.
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam commodi aliquam minima dolorem ratione quisquam? Velit reiciendis numquam rerum sed at facere, perferendis, tempore facilis dolores non atque voluptates quae.
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam commodi aliquam minima dolorem ratione quisquam? Velit reiciendis numquam rerum sed at facere, perferendis, tempore facilis dolores non atque voluptates quae.
+        .footer__row
+            .logo
+                a(href="#").logo__link Logo
+            .socials
+                ul.socials__list
+                    each val, item in ["instagram", "telegram", "facebook", "twitter"]
+                            li.socials__item
+                                a(href="https://www." + val + ".com/" class="socials__link icon-" + val target="_blanc")
+        .footer__row
+            .footer__copyright 2020 All rights reserved.
+            .nav
+                ul.nav__list
+                    li.nav__item
+                        a(href="#").nav__link Terms of service
+                    li.nav__item
+                        a(href="#").nav__link Refund policy
+                    li.nav__item
+                        a(href="#").nav__link Privacy policy
+                    li.nav__item
+                        a(href="#").nav__link Sitemap
+
+

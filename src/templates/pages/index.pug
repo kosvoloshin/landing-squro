@@ -6,213 +6,155 @@ block variables
 block content
     .wrapper
         include ../common/header.pug
-        section.section.start
-            h1.visuallyhidden section title
-            .start__row.start__row--bg
-                .container
-                    .start__title Serviced C2B, B2B accounts 
-                        br
-                        | and bank accounts for sale
-                    .start__subtitle For Every Requirements and Taste!
-            .start__row.slider
-                .container
-                    .slider__slogan We work with:
-                ul.slider__list#autoplay
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-1.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-2.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-3.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-4.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-5.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-6.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-7.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-8.png" alt="slider-image")
-                    li.slider__item
-                        img(src="./assets/images/slider/slider-9.png" alt="slider-image")
-                script.
-                    jQuery(document).ready(function() {
-                        var autoplaySlider = $('#autoplay').lightSlider({
-                            auto:true,
-                            loop:true,
-                            item:6,
-                            autoWidth:true,
-                            easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-                            speed:1000,
-                            responsive : [
-                                {
-                                    breakpoint:1800,
-                                    settings: {
-                                        item:5,
-                                        slideMove:1,
-                                        slideMargin:15,
-                                    }
-                                },
-                                {
-                                    breakpoint:1024,
-                                    settings: {
-                                        item:7,
-                                        slideMove:1,
-                                        slideMargin:15,
-                                    }
-                                },
-                                {
-                                    breakpoint:800,
-                                    settings: {
-                                        item:7,
-                                        slideMove:1,
-                                        slideMargin:15,
-                                    }
-                                },
-                                {
-                                    breakpoint:480,
-                                    settings: {
-                                        item:1,
-                                        slideMove:1,
-                                        slideMargin:0,
-                                    }
-                                }
-                            ],
-                            onBeforeSlide: function (el) {
-                                $('#current').text(el.getCurrentSlideCount());
-                            } 
-                        });
-                        $('#total').text(autoplaySlider.getTotalSlideCount());
-                    });
-            .start__abs-img(data-scrolling="true")
-                img(src="./assets/images/man.png")
-        section.section.section--blue.section--padding#about(data-scrolling="true")
+        section.section.section--slider(data-scrolling="true")
+                .slider
+                    ul.slider__list
+                        each val, index in ["1", "2", "3", "4", "5"]
+                            if index === 0
+                                li.slider__item.active(style="background-image: url(./assets/images/slide-" + val + ".jpg);")
+                                    .container
+                                        .slider__title Sed ut perspiciatis 
+                                            br 
+                                            | unde omnis iste natus 
+                                            br
+                                            | error #{val}000
+                                        a(href="#").button.button_default Learn Now!
+                            else
+                                li.slider__item(style="background-image: url(./assets/images/slide-" + val + ".jpg);")
+                                    .container
+                                        .slider__title Sed ut perspiciatis 
+                                            br 
+                                            | unde omnis iste natus 
+                                            br
+                                            | error #{val}000
+                                        a(href="#").button.button_default Learn Now!
+                    .dots
+                        button(type="button" data-num="0").dots__btn.active
+                        button(type="button" data-num="1").dots__btn
+                        button(type="button" data-num="2").dots__btn
+                        button(type="button" data-num="3").dots__btn
+                        button(type="button" data-num="4").dots__btn
+                .partners
+                    .container
+                        ul.partners__list
+                            each val, index in ["visa", "neteller", "perfect", "sticpay", "fasapay"]
+                                li.partners__item
+                                    img(src="./assets/images/" + val + ".png" alt="partner")  
+        section.section.section--services(data-scrolling="true")
             .container
-                .section__row.section__row--center
-                    .section__col.section__col--text
-                        h1.section__title About us
-                        .section__description
-                            p The company was established in 2017. The main direction of the company is the providing of bank accounts for business with payment processing and support of accounts. The company employs former bank managers, lawyers, and professional IT specialists, which allows us to always be one step ahead of banks and maintain bank accounts as professionally as possible. Our experience and connections in banks allow us to open accounts in more than 30 banks and in more than 20 countries. You can be sure that we always have a ready account for the needs of your business, and our experts will always advise the most suitable option for you. In particular, we offer the best conditions for servicing and selling accounts for high-risk businesses. Over the three years of operation, we have opened more than 700 bank accounts, and more than 30 customers have been satisfied with us.
-                    .section__col.section__col--img
-                        img.section__image(src="./assets/images/about.png" alt="section-image")
-        section.section.section--dark.section--padding.services(data-scrolling="true")
-            .container
-                .services__line
-                    h1.section__title.section__title--light Who are our services 
+                .services
+                    h1.section__title.section__title--light Excepteur sint occaecat Cupidatat 
                         br
-                        | ideal for?
-                    .section__description.section__description--light
-                        p Our services can satisfy banking needs of the following areas:
-                .services__line
+                        |Non proident, sunt in culpa qui Officia.
                     ul.services__list
-                        li.services__item
-                            .services__image
-                                img(src="./assets/images/services/service-chart.png" alt="services-image")
-                            .services__title Forex
-                        li.services__item
-                            .services__image
-                                img(src="./assets/images/services/service-dice.png" alt="services-image")
-                            .services__title Online casino
-                        li.services__item
-                            .services__image
-                                img(src="./assets/images/services/service-crypto.png" alt="services-image")
-                            .services__title Crypto
-                        li.services__item
-                            .services__image
-                                img(src="./assets/images/services/service-pharma.png" alt="services-image")
-                            .services__title Pharmaceuticals
-                        li.services__item
-                            .services__image
-                                img(src="./assets/images/services/service-dating.png" alt="services-image")
-                            .services__title Dating services
-                        li.services__item
-                            .services__image
-                                img(src="./assets/images/services/service-partner.png" alt="services-image")
-                            .services__title Financial brokers
-        section.section.section--white.section--padding#c2b(data-scrolling="true")
+                        each item, index in [{count: "75000+", desc: "First Parameter Value", icon: "one", title: "Lorem Ipsum Dolor"}, {count: "0%", desc: "Second Parameter Value", icon: "two", title: "Consectetur Adipisicing Elit"},{count: "$5000", desc: "Third Parameter Value", icon: "three", title: "Tempor Incididunt Ut"},{count: "90+", desc: "Fourth Parameter Value", icon: "four", title: "Sed Do Eiusmod"}]
+                            li.services__item
+                                .services__count=item.count
+                                .services__desc=item.desc
+                                .services__card
+                                    .services__icon
+                                        span(class="icon-service-" + item.icon)
+                                    .services__title=item.title
+                                    .services__text 
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        section.section.news(data-scrolling="true")
+            .news__bg(style="background-image: url(./assets/images/news-bg-1.jpg)")
+            .news__bg(style="background-image: url(./assets/images/news-bg-2.jpg)")
             .container
-                .section__row.section__row--center
-                    .section__col.section__col--text
-                        h1.section__title C2B Accounts
-                        .section__description
-                            p In today's world, a most of businesses use client-to-business payments, and in many cases it is necessary to observe the anonymity of the beneficiary of the business, due to the high-risk business lines. Over the many years of work, our specialists have learned to perfectly accept, process, and deliver payments to you from individuals, which will allow you to be sure that your money will be received by you in the shortest possible time and with the lowest risks. Forget about the hassle of opening, maintaining, and controlling of your C2B bank accounts. Having entrusted this to us, you will only have to think about where to spend your profit.
-                        a.button(href="#")
-                            span Choose c2b account
-                            svg.icon: use(xlink:href="assets/images/icons/sprite.svg#right-arrow")
-                    .section__col.section__col--img
-                        img.section__image(src="./assets/images/c2b.png" alt="section-image")
-        section.section.section--blue.section--padding#b2b(data-scrolling="true")
+                .news__row
+                    .news__col
+                        .section__title.section__title--light Check out our personal 
+                            br
+                            |blog to be in trend
+                        a(href="#").news__link Go to Blog
+                    .news__col
+                        .section__title.section__title--light Check out our personal 
+                            br
+                            |blog to be in trend
+                        a(href="#").news__link Check News
+        section.section.value(data-scrolling="true")
             .container
-                .section__row.section__row--center
-                    .section__col.section__col--img
-                        img.section__image(src="./assets/images/b2b.png" alt="section-image")
-                    .section__col.section__col--text
-                        h1.section__title B2B Accounts
-                        .section__description
-                            p In order to open a corporate account in the EU bank and work successfully with it, you need to know thoroughly how the bank’s compliance departments work, as well as observe a huge number of unwritten bank conditions so that the bank processes your payments correctly and does not suspect that your activities are related to the high risk segment. If you want to make and accept payments from legal entities, aggregate funds, or you just need a transit account that will be operated by the best specialists, then you are where you need to. We can offer you the best European B2B accounts in the most reliable banks on the best conditions. And our professionals will be able to make working with such accounts simple and carefree.
-                        a.button(href="#")
-                            span Choose b2b account
-                            svg.icon: use(xlink:href="assets/images/icons/sprite.svg#right-arrow")
-        section.section.section--white.section--padding#sale(data-scrolling="true")
+                h1.section__title.section__title--deep Voluptatem points doluptas 
+                    br
+                    |sit Aspernatur aut 2000
+                .value__row
+                    .value__col
+                        .value__row
+                            .value__box
+                                .value__title.value__title--required Value 01
+                                .value__count 0
+                                .value__slider
+                                    input(type="range" name="value-1" min="0" max="100" value="0").range
+                                    span.range__fill
+                            .value__box
+                                .value__title.value__title--required Value 02
+                                .value__count 0
+                                .value__slider
+                                    input(type="range" name="value-2" min="0" max="100" value="0").range
+                                    span.range__fill
+                        .value__text
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    .value__col
+                        .value__box
+                                .value__title Value 03
+                                .value__count.value__count--total 120
+                                button(type="button").button.button_default.value__button See more values
+        section.section.step(data-scrolling="true")
             .container
-                .section__row.section__row--center
-                    .section__col.section__col--text
-                        h1.section__title Accounts for sale
-                        .section__description
-                            p Opening a business account in European banks is a very difficult task, especially recently. And if you are not a resident of a European country or your company is not registered in the EU, then with a high probability you can forget about opening an account.Since we have vast experience in opening bank accounts and numerous connections with European banks, we can save you the long, laborious and not always successful process of opening a bank account. Our experts will select and provide you with a European bank account with full access package, which only you will have access to.If you have enough experience in managing accounts, communicating with banks and you need maximum privacy, then buying a bank account is what you need.
-                        a.button(href="#")
-                            span Choose your account
-                            svg.icon: use(xlink:href="assets/images/icons/sprite.svg#right-arrow")
-                    .section__col.section__col--img
-                        img.section__image(src="./assets/images/open-acc.png" alt="section-image")
-        section.section.section--blue.contacts#contacts(data-scrolling="true")
+                h1.section__title.section__title--dark Lorem ipsum dolor sit amet
+                .section__description Architecto beatae vitae dicta sunt explicabo. Nemo enim
+                ul.step__list
+                    each val, index in ["01", "02", "03"]
+                        li.step__item
+                            .step__title=val
+                            .step__subtitle Step #{val}
+                            .step__desc Lorem ipsum dolor sit amet, consectetur adipisicing elitaliqua.
+        section.section.section--contacts(data-scrolling="true")
             .container
-                .section__row
-                    .section__col.section__col--dark
-                        h1.section__title.section__title--light Our contacts
-                        ul.contacts__list
-                            li.contacts__item
-                                .contacts__icon
-                                    svg.icon: use(xlink:href="assets/images/icons/sprite.svg#location")
-                                .contacts__data Marszałkowska 82, 00-517 
-                                    br
-                                    | Warszawa, Poland
-                            li.contacts__item
-                                .contacts__icon
-                                    svg.icon: use(xlink:href="assets/images/icons/sprite.svg#prone")
-                                .contacts__data
-                                    a(href="tel:+48225539780") +48 22 553 97 80
-                                    a(href="tel:+48225539783") +48 22 553 97 83
-                            li.contacts__item
-                                .contacts__icon
-                                    svg.icon: use(xlink:href="assets/images/icons/sprite.svg#mail")
-                                .contacts__data
-                                    a(href="mailto:contact@mail.com") contact@mail.com
-                    .section__col
-                        .section__title Send us message
-                        form.form
-                            .form__row
-                                label.form__block
-                                    .form__title Name
-                                    input.form__input(type="text" placeholder="John")
-                                label.form__block
-                                    .form__title Surname
-                                    input.form__input(type="text" placeholder="Doe")
-                            .form__row
-                                label.form__block
-                                    .form__title E-mail
-                                    input.form__input(type="email" placeholder="johndoe@mail.com")
-                                label.form__block
-                                    .form__title Phone
-                                    input.form__input(type="number" placeholder="+1234567890")
-                            .form__row
-                                label.form__block
-                                    .form__title Message
-                                    textarea.form__textarea(placeholder="Your Message")
-                            .form__row
-                                button.form__submit(type="submit") send
-                            .form__modal.hide
-                                img(src="./assets/images/circle-check.png")
-                                span Your message was sent
+                h1.section__title Excepteur sint cupidatat non proident?
+                form.form
+                    .form__row
+                        .form__col
+                            .form__block
+                                input(type="text" name="firstName" placeholder="First Name").form__input
+                        .form__col
+                            .form__block
+                                input(type="text" name="lastName" placeholder="Last Name").form__input
+                        .form__col
+                            .form__block
+                                input(type="email" name="email" placeholder="Email Address").form__input
+                    .form__row
+                        .form__col
+                            .form__block
+                                .form__input-wrap
+                                    input(type="number" name="number" placeholder="+93").form__input
+                                    .tooltip
+                                        span Lorem ipsum dolor sit amet, consectetur adipisicing elitaliqua.
+                            .form__block
+                                .form__input-wrap
+                                    input(type="number" name="zipCode" placeholder="Zip Code").form__input
+                                    .tooltip
+                                        span Lorem ipsum dolor sit amet, consectetur adipisicing elitaliqua.
+                            .form__block
+                                .form__input-wrap
+                                    .select-wrap
+                                        select(placeholder="Country").form__input.form__input--select
+                                            option Spain
+                                            option Germal
+                                    .tooltip
+                                        span Lorem ipsum dolor sit amet, consectetur adipisicing elitaliqua.
+                        .form__col
+                            .form__block
+                                .form__input-wrap
+                                    input(type="date" name="date" value="2020-04-25").form__input
+                                    .tooltip
+                                        span Lorem ipsum dolor sit amet, consectetur adipisicing elitaliqua.
+                            .form__block
+                                textarea(name="message" placeholder="Your message").form__textarea
+                    .form__row
+                        .form__col
+                            label.form__file Attach your file
+                                input(type="file" id="file" name="file").visuallyhidden
+                        .form__col
+                            button(type="submit").button.button_default.button_submit Sent
         include ../common/footer.pug

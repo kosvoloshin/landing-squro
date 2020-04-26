@@ -4,15 +4,15 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 14px;
-    font-family: $r;
-    color: $text;
+    font-family: $font;
+    color: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 html {
-    line-height: 1.42;
-    background-image: linear-gradient(179deg, #00516a 11%, #357589 45%, #ffffff 132%);
+    font-size: 62.5%;
+    line-height: 1.5;
 }
 
 *,

@@ -1,31 +1,55 @@
 {
-  "name": "gulp-webpack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "del": "^3.0.0",
-    "gulp": "^4.0.2",
-    "gulp-cheerio": "^0.6.3",
-    "gulp-cli": "^2.2.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sass-glob": "^1.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-string-replace": "^1.1.2",
-    "gulp-svg-sprite": "^1.5.0",
-    "gulp-svgmin": "^2.2.0",
-    "webpack-stream": "^5.2.1",
-    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
-    "webpack": "^4.1.0"
-  },
-  "dependencies": {}
+    "name": "gulp-webpack",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.0.0",
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-proposal-class-properties": "^7.0.0",
+        "@babel/plugin-proposal-decorators": "^7.0.0",
+        "@babel/plugin-proposal-do-expressions": "^7.0.0",
+        "@babel/plugin-proposal-export-default-from": "^7.0.0",
+        "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+        "@babel/plugin-proposal-function-bind": "^7.0.0",
+        "@babel/plugin-proposal-function-sent": "^7.0.0",
+        "@babel/plugin-proposal-json-strings": "^7.0.0",
+        "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+        "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+        "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+        "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/plugin-syntax-import-meta": "^7.0.0",
+        "@babel/preset-env": "^7.9.5",
+        "babel-loader": "^8.1.0",
+        "browser-sync": "^2.18.13",
+        "del": "^3.0.0",
+        "gulp": "^4.0.2",
+        "gulp-cheerio": "^0.6.3",
+        "gulp-cli": "^2.2.0",
+        "gulp-pug": "^3.3.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-sass-glob": "^1.1.0",
+        "gulp-sourcemaps": "^2.6.1",
+        "gulp-string-replace": "^1.1.2",
+        "gulp-svg-sprite": "^1.5.0",
+        "gulp-svgmin": "^2.2.0",
+        "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+        "webpack": "^4.1.0",
+        "webpack-stream": "^5.2.1"
+    }
 }
